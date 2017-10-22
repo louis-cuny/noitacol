@@ -1,12 +1,9 @@
-{% if flash.getMessages() %}
 <div class="container flash">
     {% for name, messages in flash.getMessages() %}
-        <div class="message  alert alert-{{ name }} alert-dismissable">
+        <div class="message  alert alert-{{ name }}">
             {% for message in messages %}
                 {{ message }}
             {% endfor %}
-            <a href="#" class="close">&times;</a>
         </div>
     {% endfor %}
 </div>
-{% endif %}
