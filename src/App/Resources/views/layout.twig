@@ -24,14 +24,16 @@
         {% include 'App/flash.twig' %}
     {% endblock %}
 
+    <main role="main">
     {% block body %}{% endblock %}
-
+    </main>
     {% block footer %}
         {% include 'App/footer.twig' %}
     {% endblock %}
 
     {% block javascript %}
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
     {% endblock %}

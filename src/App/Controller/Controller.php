@@ -58,7 +58,6 @@ abstract class Controller
         foreach ($params as $param) {
             $data[$param] = $request->getParam($param, $default);
         }
-
         return $data;
     }
 

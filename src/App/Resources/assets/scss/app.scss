@@ -2,8 +2,11 @@ body {
   padding-top: 3.5rem;
 }
 
-.ui.container.flash {
+.container.flash {
   position: relative;
   z-index: 1;
-  margin-bottom: 30px;
+}
+
+.message {
+  position: relative;
 }
