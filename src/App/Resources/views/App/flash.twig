@@ -1,0 +1,9 @@
+<div class="container flash">
+    {% for name, messages in flash.getMessages() %}
+        <div class="message  alert alert-{{ name }}">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
