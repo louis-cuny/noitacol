@@ -1,0 +1,41 @@
+{% import 'Macro/form.twig' as form %}
+{% extends 'layout.twig' %}
+{% block body %}
+    {% if auth.check() %}
+
+
+        <div class="container">
+            <form action="{{ path_for('newReservation') }}" method="post">
+                {{ form.input('username','', 'Prenom + Nom','', '', 'text', 'true') }}
+                {{ form.input('country','France', 'Pays','', '', 'text', 'true') }}
+                {{ form.input('city','Paris', 'Ville','', '', 'text', 'true') }}
+                {{ form.input('start','', 'Arrivée le','', '', 'date', 'true') }}
+                {{ form.input('end','', 'Depart le','', '', 'date', 'true') }}
+                {{ form.input('collection','', 'Encaissé le','', '', 'date', 'true') }}
+                {{ form.input('amount','', 'Montant','', '', 'number', 'true', 'min=0 step=0.01') }}
+                {{ form.input('nb_traveller','', 'Nombre Voyageurs','', '', 'number', 'true') }}
+
+
+
+                {{ csrf() }}
+                <input class="" type="submit">
+                {% if has_errors() %}
+                    <div class="alert alert-warning">
+                        {% for paramErrors in errors() %}
+                            {% for error in paramErrors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+
+
+
+
+
+    {% else %}
+        {% include 'Home/homeGuest.twig' %}
+    {% endif %}
+{% endblock %}

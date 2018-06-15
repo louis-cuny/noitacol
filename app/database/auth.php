@@ -73,6 +73,8 @@ Manager::schema()->create('throttle', function (Blueprint $table) {
     $table->foreign('user_id')->references('id')->on('user');
 });
 
+
+
 /* -------------------------------------------------- */
 
 $sentinel->getRoleRepository()->createModel()->create([

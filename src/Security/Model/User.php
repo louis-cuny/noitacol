@@ -8,8 +8,6 @@ class User extends EloquentUser
 {
     protected $table = 'user';
 
-    protected $primaryKey = 'id';
-
     protected $fillable = [
         'username',
         'email',
@@ -20,4 +18,9 @@ class User extends EloquentUser
     ];
 
     protected $loginNames = ['username', 'email'];
+
+    public function locations()
+    {
+        return $this->hasMany('Location', 'user_id', 'id');
+    }
 }

@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+{% block body %}
+    {% if auth.check() %}
+        <div class="container">
+            <table class="table table-bordered">
+                <caption>{{ reservations | length }} rows</caption>
+                <thead>
+                <tr>
+                    <th>Brut</th>
+                    <th>Net</th>
+                    <th>Louis</th>
+                    <th>Julien</th>
+                    <th>Papa</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.amount }}</td>
+                        <td>{{ reservation.amount - reservation.amount * 0.213 }}</td>
+                        <td>{{ (reservation.amount - reservation.amount * 0.213) *0.5 }}</td>
+                        <td>{{ (reservation.amount - reservation.amount * 0.213) *0.25}}</td>
+                        <td>{{ (reservation.amount * 0.213) + (reservation.amount - reservation.amount * 0.213) *0.25}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        {% include 'Home/homeGuest.twig' %}
+    {% endif %}
+{% endblock %}

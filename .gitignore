@@ -6,3 +6,5 @@ package-lock.json
 app/config/parameters.yml
 var/cache/*
 var/logs/*
+bin/
+app/database/*.csv

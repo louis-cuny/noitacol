@@ -1,0 +1,38 @@
+{% extends 'layout.twig' %}
+{% block body %}
+    {% if auth.check() %}
+        <div class="container">
+            <table class="table table-bordered">
+                <caption>{{ months | length }} rows</caption>
+                <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Collections</th>
+                    <th>Net</th>
+                    <th>Louis</th>
+                    <th>Julien</th>
+                    <th>Papa</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for month in months %}
+                    <tr>
+                        <td>{{ month.month }}/{{ month.year }}</td>
+                        <td>{{ month.amount }}</td>
+                        <td>{{ month.amount - month.amount * 0.213 }}</td>
+                        <td>{{ (month.amount - month.amount * 0.213) * 0.5 }}</td>
+                        <td>{{ (month.amount - month.amount * 0.213) * 0.25}}</td>
+                        <td>{{ (month.amount * 0.213) + (month.amount - month.amount * 0.213) *0.25}}</td>
+                    </tr>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        {% include 'Home/homeGuest.twig' %}
+    {% endif %}
+{% endblock %}

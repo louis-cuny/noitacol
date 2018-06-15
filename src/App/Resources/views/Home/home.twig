@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+{% block body %}
+    {% if auth.check() %}
+        <div class="container">
+            <pre>{{ dump(t) }}</pre>
+        </div>
+
+    {% else %}
+        {% include 'Home/homeGuest.twig' %}
+    {% endif %}
+{% endblock %}

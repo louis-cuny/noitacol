@@ -3,6 +3,11 @@
 use Illuminate\Database\Capsule\Manager;
 
 $tables = [
+    'reservation',
+    'location',
+    'traveller',
+    'intermediate',
+
     'activations',
     'persistences',
     'reminders',
