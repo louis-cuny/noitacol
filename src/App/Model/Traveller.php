@@ -10,6 +10,6 @@ class Traveller extends Model
 
     public function reservations()
     {
-        return $this->belongsToMany('Reservation', 'id', 'traveller_id');
+        return $this->belongsToMany('App\Model\Reservation', 'traveller_id', 'id');
     }
 }

@@ -10,6 +10,6 @@ class Intermediate extends Model
 
     public function reservations()
     {
-        return $this->hasMany('Reservation', 'id', 'intermediate_id');
+        return $this->hasMany('App\Model\Reservation', 'intermediate_id', 'id');
     }
 }

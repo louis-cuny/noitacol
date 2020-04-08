@@ -7,30 +7,28 @@
                 <thead>
                 <tr>
                     <th>Year</th>
-                    <th>Nb </th>
+                    <th>Nb</th>
                     <th>Collections</th>
                     <th>Net</th>
                     <th>Louis</th>
                     <th>Julien</th>
                     <th>Papa</th>
-
                 </tr>
                 </thead>
                 <tbody>
                 {% for year in years %}
                     <tr>
-                        <td>{{ year.year }}</td>
+                        <td><a href="{{ path_for('oneYear', {'year' : year.year}) }}">{{ year.year }}</a></td>
                         <td>{{ year.count }}</td>
                         <td>{{ year.amount }}</td>
                         <td>{{ year.amount - reservation.amount * 0.213 }}</td>
                         <td>{{ (year.amount - year.amount * 0.213) * 0.5 }}</td>
-                        <td>{{ (year.amount - year.amount * 0.213) * 0.25}}</td>
-                        <td>{{ (year.amount * 0.213) + (year.amount - year.amount * 0.213) *0.25}}</td>
+                        <td>{{ (year.amount - year.amount * 0.213) * 0.25 }}</td>
+                        <td>{{ (year.amount * 0.213) + (year.amount - year.amount * 0.213) *0.25 }}</td>
                     </tr>
                     </tr>
 
                 {% endfor %}
-
                 </tbody>
             </table>
         </div>

@@ -18,16 +18,16 @@ class Reservation extends Model
 
     public function traveller()
     {
-        return $this->belongsTo('Traveller', 'id', 'traveller_id');
+        return $this->belongsTo('App\Model\Traveller', 'traveller_id', 'id' );
     }
 
     public function location()
     {
-        return $this->belongsTo('Location', 'id', 'location_id');
+        return $this->belongsTo('App\Model\Location', 'location_id', 'id');
     }
 
     public function intermediate()
     {
-        return $this->belongsTo('Intermediate', 'id', 'intermediate_id');
+        return $this->belongsTo('App\Model\Intermediate', 'intermediate_id', 'id');
     }
 }

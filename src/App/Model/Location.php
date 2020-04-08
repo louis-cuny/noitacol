@@ -10,11 +10,11 @@ class Location extends Model
 
     public function user()
     {
-        return $this->belongsTo('User', 'id', 'location_id');
+        return $this->belongsTo('Security\Model\User', 'id', 'location_id');
     }
 
     public function reservations()
     {
-        return $this->hasMany('Reservation', 'reservation_id', 'id');
+        return $this->hasMany('App\Model\Reservation', 'id', 'reservation_id');
     }
 }

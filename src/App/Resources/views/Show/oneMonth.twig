@@ -6,6 +6,7 @@
                 <caption>{{ reservations | length }} rows</caption>
                 <thead>
                 <tr>
+                    <th>Traveller</th>
                     <th>Brut</th>
                     <th>Net</th>
                     <th>Louis</th>
@@ -16,6 +17,7 @@
                 <tbody>
                 {% for reservation in reservations %}
                     <tr>
+                        <td>{{ reservation.traveller.username }}</td>
                         <td>{{ reservation.amount }}</td>
                         <td>{{ reservation.amount - reservation.amount * 0.213 }}</td>
                         <td>{{ (reservation.amount - reservation.amount * 0.213) *0.5 }}</td>

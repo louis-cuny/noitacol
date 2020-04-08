@@ -18,7 +18,7 @@
                 <tbody>
                 {% for month in months %}
                     <tr>
-                        <td>{{ month.month }}/{{ month.year }}</td>
+                        <td><a href="{{ path_for('oneMonth', {'month' : month.month, 'year' : month.year}) }}">{{ month.month }}/{{ month.year }}</a></td>
                         <td>{{ month.amount }}</td>
                         <td>{{ month.amount - month.amount * 0.213 }}</td>
                         <td>{{ (month.amount - month.amount * 0.213) * 0.5 }}</td>

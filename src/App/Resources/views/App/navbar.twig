@@ -10,6 +10,15 @@
                 <ul class="navbar-nav mr-auto">
                     {% if auth.check() %}
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ path_for('months') }}">Months</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path_for('years') }}">Years</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path_for('newReservation') }}">New reservation</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ path_for('logout') }}">Log out</a>
                         </li>
                     {% else %}
